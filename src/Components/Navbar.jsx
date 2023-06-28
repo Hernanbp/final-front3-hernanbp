@@ -12,11 +12,16 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Outlet />
-      <Link to={routes.home}>Home</Link>
-      <Link to={routes.contact}>Contact</Link>
-      <Link to={routes.favs}>Favorites</Link>
-      <button onClick={handleChangeTheme}>Change theme</button>
+      <div className="wrapper">
+        <Outlet />
+        <p className="alumno">Hernan Barrios Paz - Camada 2 - CTD</p>
+        <div className="links">
+          <Link to={routes.home}>Home</Link>
+          <Link to={routes.contact}>Contact</Link>
+          <Link to={routes.favs}>Favorites</Link>
+          <button onClick={handleChangeTheme}>Change theme</button>
+        </div>
+      </div>
     </nav>
   )
 }

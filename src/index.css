@@ -61,16 +61,6 @@ nav {
   gap: 0.25rem;
 }
 
-nav > button {
-  background-color: #ab3dff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  color: white;
-  margin-left: 0.5rem;
-}
-
 a {
   display: flex;
   align-items: center;
@@ -255,4 +245,42 @@ tr:nth-child(even) {
 
 .error {
   color: red;
+}
+
+nav > .wrapper {
+  display: flex;
+  max-width: 1440px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.alumno {
+  font-weight: 500;
+  font-size: 0.75rem;
+  background: black;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .alumno {
+    display: none;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links > button {
+  background-color: #ab3dff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: white;
+  margin-left: 0.5rem;
 }
