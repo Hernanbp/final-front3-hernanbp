@@ -1,15 +1,53 @@
-import React from "react";
-
+import { useRef, useState } from "react"
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
+  const [isCompleteForm, setIsCompleteForm] = useState(false)
+  const [formHaveErrors, setFormHaveErrors] = useState(false)
+  let nameRef = useRef()
+  let emailRef = useRef()
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault()
+    let name = nameRef.current.value
+    let email = emailRef.current.value
+
+    if (
+      name === "" ||
+      email === "" ||
+      name.length < 5 ||
+      email.length < 10 ||
+      !email.includes("@") ||
+      !email.includes(".")
+    ) {
+      setFormHaveErrors(true)
+      setIsCompleteForm(false)
+    } else {
+      setFormHaveErrors(false)
+      setIsCompleteForm(true)
+      setTimeout(() => {
+        e.target.reset()
+      }, 100)
+    }
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmitForm} className="form__contact">
+        <input placeholder="Your name..." type="text" ref={nameRef} />
+        <input placeholder="Your email..." type="email" ref={emailRef} />
+        <button className="contact__button">Submit</button>
       </form>
+      {formHaveErrors && (
+        <p className="error">Por favor verifique su información nuevamente!</p>
+      )}
+      {isCompleteForm && (
+        <b>
+          Gracias {nameRef.current.value}, te contactaremos cuanto antes vía
+          mail
+        </b>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
