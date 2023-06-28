@@ -5,7 +5,8 @@ Examen Final de Frontend III
 # HERNAN BARRIOS PAZ - CAMADA 2
 
 LINK AL DEPLOY PARA NO TENER QUE BAJAR TODO EL PROYECTO: https://final-front3-hernanbp.vercel.app/
-
+##
+para correr el proyecto usar `pnpm start`
 ## Indice
 
 - [Requisitos](#requisitos)
